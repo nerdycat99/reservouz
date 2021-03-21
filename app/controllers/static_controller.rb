@@ -9,4 +9,7 @@ class StaticController < ApplicationController
     association_json = File.read(Rails.public_path + "apple-app-site-association")
     render :json => association_json, :content_type => "application/pkcs7-mime"
   end
+
+  def support
+  end
 end
