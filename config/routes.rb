@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :reservations, only: :index
-      get '/reservations/confirm', to: '/api/v1/reservations#confirm'
+      post '/reservations/confirm', to: '/api/v1/reservations#confirm'
     end
   end
 end
