@@ -1,10 +1,14 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
-    Email.create(recipient_email: "email@adress.com", recipient_phone: "12345678", start_time: "900", end_time: "930", venue_id: "44444")
-    render json: "hello"
+    @emails = Email.all
   end
 
   def show
+  end
+
+  def confirm
+    Email.create(recipient_email: "email@adress.com", recipient_phone: "12345678", start_time: "900", end_time: "930", venue_id: "44444")
+    render json: "reservation received"
   end
 end
 
