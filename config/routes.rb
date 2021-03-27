@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   get 'support', to: 'static_#support'
   get 'privacy', to: 'static_#privacy'
   get '/apple-app-site-association' => 'static#apple_app_site_association'
+
+  namespace :api do
+    namespace :v1 do
+      resources :reservations, only: :index
+    end
+  end
 end
