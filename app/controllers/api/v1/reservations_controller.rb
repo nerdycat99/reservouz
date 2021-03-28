@@ -11,12 +11,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   def confirm
     puts "******"
-    puts params["triggerName"].inspect
-    puts params["appId"].inspect
-    puts params["object"]["venue_id"].inspect
-    puts params["object"]["className"].inspect
-    puts request.headers['X-Parse-Webhook-Key']
-    # Email.create(recipient_email: "email@adress.com", recipient_phone: "12345678", start_time: "900", end_time: "930", venue_id: "44444")
+    puts webhook_key
     create_confirmation if request.headers['X-Parse-Webhook-Key'] == webhook_key
     # render json: "reservation received"
   end
@@ -24,11 +19,12 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def webhook_key
-    @webhook_key = "JMbugAMQgzjGBjhkZaoGPENGavBYCHk5TxQMUqGO"
+    @webhook_key = ENV['PARSE_WEBHOOK_KEY']
   end
 
   def create_confirmation
     reservation = params["object"]
+    type =  params["block"] ? "venue_blocked" : "customer"
     if params["triggerName"] == "afterSave" && reservation["className"] == "reservation"
       Email.create(
         recipient_email: reservation["email"], 
@@ -37,7 +33,8 @@ class Api::V1::ReservationsController < ApplicationController
         end_time: reservation["end"],
         venue_id: reservation["venue_id"],
         name: reservation["name"],
-        object_id: reservation["objectId"]
+        object_id: reservation["objectId"],
+        type: type
       )
     end
   end
