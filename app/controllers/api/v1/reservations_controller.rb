@@ -11,7 +11,10 @@ class Api::V1::ReservationsController < ApplicationController
   def confirm
     puts "******"
     puts params["triggerName"].inspect
-    puts params["venue_id"].inspect
+    puts params["appId"].inspect
+    puts params["object"]["venue_id"].inspect
+    puts params["object"]["className"].inspect
+    puts request.headers['X-Parse-Webhook-Key']
     Email.create(recipient_email: "email@adress.com", recipient_phone: "12345678", start_time: "900", end_time: "930", venue_id: "44444")
     render json: "reservation received"
   end
