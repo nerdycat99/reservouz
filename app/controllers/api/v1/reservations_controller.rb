@@ -34,7 +34,7 @@ class Api::V1::ReservationsController < ApplicationController
         venue_id: reservation["venue_id"],
         name: reservation["name"],
         object_id: reservation["objectId"],
-        type: type
+        reservation_type: type
       )
     end
   end
