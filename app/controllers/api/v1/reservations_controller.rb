@@ -10,9 +10,8 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def confirm
-    puts "******"
-    puts webhook_key
-    create_confirmation if request.headers['X-Parse-Webhook-Key'] == webhook_key
+    email = create_confirmation if request.headers['X-Parse-Webhook-Key'] == webhook_key
+    NotificationMailer.reservation_confirmed(email).deliver_now
     # render json: "reservation received"
   end
 
@@ -39,16 +38,3 @@ class Api::V1::ReservationsController < ApplicationController
     end
   end
 end
-
-
-# Parse.Cloud.afterSave("reservation", (request) => {
-#   const query = new Parse.Query("Post");
-#   query.get(request.object.get("post").id)
-#     .then(function(post) {
-#       post.increment("comments");
-#       return post.save();
-#     })
-#     .catch(function(error) {
-#       console.error("Got an error " + error.code + " : " + error.message);
-#     });
-# });

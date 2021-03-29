@@ -1,10 +1,10 @@
-<p>Hi NAME</p>
+<p>Hi <%= @email.name %></p>
 <p>
     Thank you for using Reservouz to make a reservation.
 
-    We are delighted to confirm that Nathasha Chabelnique look forward to welcoming you on Saturday 27 March at 15:00.
+    We are delighted to confirm that <%= @venue.name %> look forward to welcoming you on <%= @date %> at <%= @time %>.
 
 </p>
 
-Kind Regards,<br />
+Kind Regards<br />
 Reservouz Team
