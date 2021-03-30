@@ -12,6 +12,7 @@ class Api::V1::ReservationsController < ApplicationController
   def confirm
     email = create_confirmation if request.headers['X-Parse-Webhook-Key'] == webhook_key
     NotificationMailer.reservation_confirmed(email).deliver_now
+    NotificationMailer.confirmation_to_venue(email).deliver_now
     # render json: "reservation received"
   end
 
