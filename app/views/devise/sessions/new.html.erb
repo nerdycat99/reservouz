@@ -1,4 +1,4 @@
-<div class="col-10 offset-1">
+<div class="col-12">
 
   <div class="cntr txt-clr-white">
     <div class="container">
@@ -9,9 +9,9 @@
   </div>
   <br /><br /><br />
 
-  <div class="col-10 offset-1 booyah-box">
+  <div class="col-12 col-md-8 offset-md-2 booyah-box">
     <br />
-    <div class="col-10 offset-1">
+    <div class="col-12 col-md-10 offset-md-1">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
           <%= f.label :email, "email address",  class: "input-label" %><br/>

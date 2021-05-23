@@ -1,4 +1,4 @@
-<div class="col-10 offset-1">
+<div class="col-12">
 
   <div class="cntr txt-clr-white">
     <div class="container">
@@ -10,9 +10,9 @@
   </div>
   <br />
 
-  <div class="col-10 offset-1 booyah-box">
+  <div class="col-12 col-md-8 offset-md-2 booyah-box">
     <br />
-    <div class="col-10 offset-1">
+    <div class="col-12 col-md-10 offset-md-1">
       <%= form_for @venue, url: admin_venues_path do |f| %>
         <%= f.label :first_name, "your first name", class: "input-label" %><br/>
         <%= f.text_field :first_name, autofocus: true, autocomplete: "off", style: "border-radius: 20px;", class: "field input-text", placeholder: "first name" %>

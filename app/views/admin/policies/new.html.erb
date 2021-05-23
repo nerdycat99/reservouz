@@ -1,4 +1,4 @@
-<div class="col-10 offset-1">
+<div class="col-12">
 
   <div class="cntr txt-clr-white">
     <div class="container">
@@ -11,9 +11,9 @@
   </div>
   <br /><br />
 
-  <div class="col-12 offset-0 booyah-box">
+  <div class="col-12 col-md-10 offset-md-1 booyah-box">
     <br />
-    <div class="col-12 offset-0">
+    <div class="col-12">
       <%= form_for @policy, url: admin_policies_path do |f| %>
         <%= f.hidden_field :venue_id, value: @venue.id, autocomplete: "off" %>
         <div class="row">
