@@ -1,26 +1,34 @@
-<h2>Log in</h2>
+<div class="col-10 offset-1">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="cntr txt-clr-white">
+    <div class="container">
+      <div class="logo-large">reservouz</div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <br />
+    <div class="subtitle">log in to your account</div>
   </div>
-<% end %>
+  <br /><br /><br />
 
-<%= render "devise/shared/links" %>
+  <div class="col-10 offset-1 booyah-box">
+    <br />
+    <div class="col-10 offset-1">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+          <%= f.label :email, "email address",  class: "input-label" %><br/>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", style: "border-radius: 20px;", class: "field input-text", placeholder: "email address" %>
+          <br /><br />
+          <%= f.label :password, "password", class: "input-label" %><br/>
+          <%= f.password_field :password, autocomplete: "new-password", style: "border-radius: 20px;", class: "field input-text", placeholder: "current-password" %>
+          <br /><br />
+        <div class="actions cntr">
+          <%= f.submit 'log in', class: 'btn btn-primary', style: "width:100px;" %>
+          <%= link_to 'cancel', root_path, class: 'btn btn-danger', style: "width:100px;" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -1,4 +1,4 @@
-html {
+body, html {
   height: 100%;
 }
 
@@ -12,15 +12,19 @@ body {
   flex: 1;
 }
 
-#footer {
+.footer {
   position: relative;
+  margin-top: -50px; /* negative value of footer height */
+  height: 50px;
+  clear:both;
+  padding-top:20px;
+}
+
+#footer {
   width: 100%;
-  min-height: 100px;
   background-color: rgba(36, 32, 33, 0.9);
   color: white;
   font-family: "Helvetica Neue", Helvetica;
-  padding: 10px 0px;
-  margin-top: 30px;
 }
 
 #footer a {
