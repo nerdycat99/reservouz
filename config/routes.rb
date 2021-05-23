@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  # devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'static_#index'
   get 'about', to: 'static_#about'
@@ -12,4 +14,12 @@ Rails.application.routes.draw do
       post '/reservations/confirm', to: '/api/v1/reservations#confirm'
     end
   end
+
+  namespace :admin do
+    resources :venues, only: [:show, :new, :create, :edit, :update]
+    resources :policies, only: [:show, :new, :create, :edit, :update]
+  end
+
+  resources :reservations, only: [:index, :new, :create]
+  resources :venues, only: [:index, :show]
 end

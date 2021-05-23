@@ -1,5 +1,9 @@
 class StaticController < ApplicationController
+
+  before_action :registration_in_progress
+
   def index
+    redirect_to new_reservation_path(venue: venue_external_id) if venue_external_id
   end
 
   def about
@@ -14,5 +18,17 @@ class StaticController < ApplicationController
   end
 
   def privacy
+  end
+
+  private
+
+  def registration_in_progress
+    if user_signed_in?
+      redirect_to new_admin_venue_path if current_user.venue_id.nil?
+    end
+  end
+
+  def venue_external_id
+    @venue_external_id = params["v"]
   end
 end

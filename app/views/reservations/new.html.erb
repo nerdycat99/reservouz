@@ -1,0 +1,12 @@
+<h1>make a new reservation</h1>
+<%= @venue.inspect %>
+<br />
+<%= @reservations.inspect %>
+
+<!-- 
+ get the venue policy
+ for each day in policy create ranges
+ iterate through the ranges and build slots
+ for each slot check whether a reservation clashes - mark as free / busy
+ save these to an array of days that contain a hash of slost
+ -->

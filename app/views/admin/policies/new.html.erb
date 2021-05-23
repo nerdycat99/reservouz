@@ -1,0 +1,196 @@
+<div class="col-10 offset-1">
+
+  <div class="cntr txt-clr-white">
+    <div class="container">
+      <div class="logo-large">reservouz</div>
+      <div class="title">complete your registration</div>
+      <br />
+      <div class="subtitle">finally tell us about your opening hours and how many reservations you allow at once.</div>
+      <%= render "help" %>
+    </div>
+  </div>
+  <br /><br />
+
+  <div class="col-12 offset-0 booyah-box">
+    <br />
+    <div class="col-12 offset-0">
+      <%= form_for @policy, url: admin_policies_path do |f| %>
+        <%= f.hidden_field :venue_id, value: @venue.id, autocomplete: "off" %>
+        <div class="row">
+          <div class="two-column">
+            <%= f.label :concurrent_bookings, "how many simultaneous reservations do you allow", class: "input-label" %>
+            <%= f.number_field :concurrent_bookings, autofocus: true, autocomplete: "off", style: "border-radius: 20px;", class: "field input-text", placeholder: "simultaneous reservations" %>
+          </div>
+          <div class="two-column">
+            <%= f.label :duration_allowed, "length of a reservation (5-60 mins)", class: "input-label" %>
+            <%= f.number_field :duration_allowed, autofocus: true, autocomplete: "off", style: "border-radius: 20px;", class: "field input-text", placeholder: "length of a reservation" %>
+          </div>
+        </div>
+        <br />
+        <div class = "container">
+          <div class = "row">
+            <h5 class="input-label no-upper-padding">opening hours for the days you are open</h5>&nbsp;&nbsp;
+            <%= link_to '?', '#', data: {toggle: 'modal', target: '#help'}, class: 'btn btn-primary', id: 'btnAcceptTask', remote: true %>
+          </div>
+        </div>
+        <hr>
+        <div class = "row"><h5 class="input-label">monday</h5></div>
+        <div class = "row">
+          <div class="column">
+            <%= f.label :monday, "start", class: "time-label" %>
+            <%= f.time_field :monday_start_a, style: "border-radius: 20px;" %>
+            <%= f.label :monday, "end", class: "time-label" %>
+            <%= f.time_field :monday_end_a, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :monday, "start", class: "time-label" %>
+            <%= f.time_field :monday_start_b, style: "border-radius: 20px;" %>
+            <%= f.label :monday, "end", class: "time-label" %>
+            <%= f.time_field :monday_end_b, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :monday, "start", class: "time-label" %>
+            <%= f.time_field :monday_start_c, style: "border-radius: 20px;" %>
+            <%= f.label :monday, "end", class: "time-label" %>
+            <%= f.time_field :monday_end_c, style: "border-radius: 20px;" %>
+          </div>
+        </div>
+        <hr>
+        <div class = "row"><h5 class="input-label">tuesday</h5></div>
+        <div class = "row">
+          <div class="column">
+            <%= f.label :monday, "start", class: "time-label" %>
+            <%= f.time_field :tuesday_start_a, style: "border-radius: 20px;" %>
+            <%= f.label :monday, "end", class: "time-label" %>
+            <%= f.time_field :tuesday_end_a, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :tuesday, "start", class: "time-label" %>
+            <%= f.time_field :tuesday_start_b, style: "border-radius: 20px;" %>
+            <%= f.label :tuesday, "end", class: "time-label" %>
+            <%= f.time_field :tuesday_end_b, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :tuesday, "start", class: "time-label" %>
+            <%= f.time_field :tuesday_start_c, style: "border-radius: 20px;" %>
+            <%= f.label :tuesday, "end", class: "time-label" %>
+            <%= f.time_field :tuesday_end_c, style: "border-radius: 20px;" %>
+          </div>
+        </div>
+        <hr>
+        <div class = "row"><h5 class="input-label">wednesday</h5></div>
+        <div class = "row">
+          <div class="column">
+            <%= f.label :monday, "start", class: "time-label" %>
+            <%= f.time_field :wednesday_start_a, style: "border-radius: 20px;" %>
+            <%= f.label :monday, "end", class: "time-label" %>
+            <%= f.time_field :wednesday_end_a, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :wednesday, "start", class: "time-label" %>
+            <%= f.time_field :wednesday_start_b, style: "border-radius: 20px;" %>
+            <%= f.label :wednesday, "end", class: "time-label" %>
+            <%= f.time_field :wednesday_end_b, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :wednesday, "start", class: "time-label" %>
+            <%= f.time_field :wednesday_start_c, style: "border-radius: 20px;" %>
+            <%= f.label :wednesday, "end", class: "time-label" %>
+            <%= f.time_field :wednesday_end_c, style: "border-radius: 20px;" %>
+          </div>
+        </div>
+        <hr>
+        <div class = "row"><h5 class="input-label">thursday</h5></div>
+        <div class = "row">
+          <div class="column">
+            <%= f.label :monday, "start", class: "time-label" %>
+            <%= f.time_field :thursday_start_a, style: "border-radius: 20px;" %>
+            <%= f.label :monday, "end", class: "time-label" %>
+            <%= f.time_field :thursday_end_a, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :thursday, "start", class: "time-label" %>
+            <%= f.time_field :thursday_start_b, style: "border-radius: 20px;" %>
+            <%= f.label :thursday, "end", class: "time-label" %>
+            <%= f.time_field :thursday_end_b, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :thursday, "start", class: "time-label" %>
+            <%= f.time_field :thursday_start_c, style: "border-radius: 20px;" %>
+            <%= f.label :thursday, "end", class: "time-label" %>
+            <%= f.time_field :thursday_end_c, style: "border-radius: 20px;" %>
+          </div>
+        </div>
+        <hr>
+        <div class = "row"><h5 class="input-label">friday</h5></div>
+        <div class = "row">
+          <div class="column">
+            <%= f.label :monday, "start", class: "time-label" %>
+            <%= f.time_field :friday_start_a, style: "border-radius: 20px;" %>
+            <%= f.label :monday, "end", class: "time-label" %>
+            <%= f.time_field :friday_end_a, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :friday, "start", class: "time-label" %>
+            <%= f.time_field :friday_start_b, style: "border-radius: 20px;" %>
+            <%= f.label :friday, "end", class: "time-label" %>
+            <%= f.time_field :friday_end_b, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :friday, "start", class: "time-label" %>
+            <%= f.time_field :friday_start_c, style: "border-radius: 20px;" %>
+            <%= f.label :friday, "end", class: "time-label" %>
+            <%= f.time_field :friday_end_c, style: "border-radius: 20px;" %>
+          </div>
+        </div>
+        <hr>
+        <div class = "row"><h5 class="input-label">saturday</h5></div>
+        <div class = "row">
+          <div class="column">
+            <%= f.label :monday, "start", class: "time-label" %>
+            <%= f.time_field :saturday_start_a, style: "border-radius: 20px;" %>
+            <%= f.label :monday, "end", class: "time-label" %>
+            <%= f.time_field :saturday_end_a, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :saturday, "start", class: "time-label" %>
+            <%= f.time_field :saturday_start_b, style: "border-radius: 20px;" %>
+            <%= f.label :saturday, "end", class: "time-label" %>
+            <%= f.time_field :saturday_end_b, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :saturday, "start", class: "time-label" %>
+            <%= f.time_field :saturday_start_c, style: "border-radius: 20px;" %>
+            <%= f.label :saturday, "end", class: "time-label" %>
+            <%= f.time_field :saturday_end_c, style: "border-radius: 20px;" %>
+          </div>
+        </div>
+        <hr>                
+        <div class = "row"><h5 class="input-label">sunday</h5></div>
+        <div class = "row">
+          <div class="column">
+            <%= f.label :monday, "start", class: "time-label" %>
+            <%= f.time_field :sunday_start_a, style: "border-radius: 20px;" %>
+            <%= f.label :monday, "end", class: "time-label" %>
+            <%= f.time_field :sunday_end_a, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :sunday, "start", class: "time-label" %>
+            <%= f.time_field :sunday_start_b, style: "border-radius: 20px;" %>
+            <%= f.label :sunday, "end", class: "time-label" %>
+            <%= f.time_field :sunday_end_b, style: "border-radius: 20px;" %>
+          </div>
+          <div class="column">
+            <%= f.label :sunday, "start", class: "time-label" %>
+            <%= f.time_field :sunday_start_c, style: "border-radius: 20px;" %>
+            <%= f.label :sunday, "end", class: "time-label" %>
+            <%= f.time_field :sunday_end_c, style: "border-radius: 20px;" %>
+          </div>
+        </div>
+        <div class="actions cntr">
+          <%= f.submit 'finish', class: 'btn btn-primary', style: "width:100px;" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

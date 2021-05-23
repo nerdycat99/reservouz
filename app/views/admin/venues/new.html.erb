@@ -1,0 +1,40 @@
+<div class="col-10 offset-1">
+
+  <div class="cntr txt-clr-white">
+    <div class="container">
+      <div class="logo-large">reservouz</div>
+      <div class="title">continue registration</div>
+      <br />
+      <div class="subtitle">great, now we'll grab a few quick details about you and your venue...</div>
+    </div>
+  </div>
+  <br />
+
+  <div class="col-10 offset-1 booyah-box">
+    <br />
+    <div class="col-10 offset-1">
+      <%= form_for @venue, url: admin_venues_path do |f| %>
+        <%= f.label :first_name, "your first name", class: "input-label" %><br/>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "off", style: "border-radius: 20px;", class: "field input-text", placeholder: "first name" %>
+        <br /><br />
+        <%= f.label :last_name, "and last name", class: "input-label" %><br/>
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "off", style: "border-radius: 20px;", class: "field input-text", placeholder: "last name" %>
+        <br /><br />
+        <%= f.label :name, "name of your venue", class: "input-label" %><br/>
+        <%= f.text_field :name, autofocus: true, autocomplete: "off", style: "border-radius: 20px;", class: "field input-text", placeholder: "venue name" %>
+        <br /><br />
+        <%= f.label :address, "venue address", class: "input-label" %><br/>
+        <%= f.text_field :address, autofocus: true, autocomplete: "off", style: "border-radius: 20px;", class: "field input-text", placeholder: "venue address" %>
+        <br /><br />
+        <div class="field input-text">
+          <%= f.select :zone, @timezones %>
+        </div>
+        <br /><br />
+      <div class="actions cntr">
+        <%= f.submit 'next', class: 'btn btn-primary', style: "width:100px;" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

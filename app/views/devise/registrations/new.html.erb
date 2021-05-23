@@ -1,0 +1,40 @@
+<div class="col-10 offset-1">
+
+  <div class="cntr txt-clr-white">
+    <div class="container">
+      <div class="logo-large">reservouz</div>
+      <div class="title">let's get you set up</div>
+    </div>
+    <br />
+    <div class="subtitle">first we'll register an account for you, after that we'll set up your venue for use with reservouz</div>
+  </div>
+  <br /><br /><br />
+
+  <div class="col-10 offset-1 booyah-box">
+    <br />
+    <div class="col-10 offset-1">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+          <%= f.label :email, "email address",  class: "input-label" %><br/>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", style: "border-radius: 20px;", class: "field input-text", placeholder: "enter email address" %>
+          <br /><br />
+          <%= f.label :password, "enter password", class: "input-label" %><br/>
+          <%= f.password_field :password, autocomplete: "new-password", style: "border-radius: 20px;", class: "field input-text", placeholder: "enter password" %>
+          <br /><br />
+          <%= f.label :password_confirmation, "confirm password", class: "input-label" %><br/>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", style: "border-radius: 20px;", class: "field input-text", placeholder: "confirm password" %>
+          <br /><br />
+        <div class="actions cntr">
+          <%= f.submit 'next', class: 'btn btn-primary', style: "width:100px;" %>
+          <%= link_to 'cancel', root_path, class: 'btn btn-danger', style: "width:100px;" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+
+
