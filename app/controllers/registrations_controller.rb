@@ -1,6 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
 
   # after_action :sign_up_venue
+  # before_action :testingtons
+
+  # def testingtons
+  #   puts "IN HERE NOW"
+  #   # @user = User.new
+  # end
 
   def create
     super
@@ -15,12 +21,6 @@ class RegistrationsController < Devise::RegistrationsController
       # redirect_to new_admin_venue_path
     end
   end
-
-  # def new
-  #   puts "IN HERE NOW"
-  #   @user = User.new
-  # end
-
 
   # def create
   #   super

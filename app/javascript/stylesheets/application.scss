@@ -14,6 +14,10 @@ body {
 .navbar-custom {
   background-color: #03F519;
 }
+
+.white-background {
+  background-color: #ffffff
+}
   
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
@@ -23,6 +27,8 @@ body {
 nav .navbar-nav li a {
   color: white !important;
 }
+
+a { color: inherit; } 
 
 .txt-clr-white {
   color: white;
@@ -45,11 +51,25 @@ nav .navbar-nav li a {
   font-size: 40px;
 }
 
+.large-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+}
+
 .subtitle {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: white;
   font-size: 24px;
+}
+
+.subtitle.grey {
+  color: grey;
+}
+
+.subtitle.pad {
+  margin-top: 20px;
 }
 
 .booyah-box {
@@ -96,6 +116,14 @@ img.responsive { width: 27%; }
   text-align: center;
 }
 
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
 .column {
   float: left;
   width: 33.3%;
@@ -112,6 +140,17 @@ img.responsive { width: 27%; }
   float: left;
   width: 100%;
   padding: 20px;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  & > [class^="col-"],
+  & > [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .field {
